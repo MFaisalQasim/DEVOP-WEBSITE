@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+    <title>Document</title>
+    <!-- <style>
+        body {
+            font-family: 'Lato', sans-serif
+        }
+
+        h1 {
+            margin-bottom: 40px
+        }
+
+        label {
+            color: #333
+        }
+
+        .btn-send {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            width: 80%;
+            margin-left: 3px;
+            margin-top: 25px;
+        }
+
+        .help-block.with-errors {
+            color: #ff5050;
+            margin-top: 5px
+        }
+
+
+        .form-border {
+            border: 0px !important;
+        }
+    </style> -->
+
+    <style>
+        .border-class {
+            border: #FEAD3A solid 0.1px;
+        }
+
+        .padding-class {
+            padding: 10px 0px 10px 0px;
+        }
+
+        .field-div {
+            padding: 0 10px 0px 10px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(./images/project-one-img-1.jpg);">
+    <!-- <div class="container">
+        <div class="row ">
+            <div class="col-6 mx-auto">
+                <div class="field-div">
+                                        <form id="contact-form" role="form">
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">  <input id="form_name" type="text" name="name" class=" form-control form-border"  placeholder="Enter  Name " required="required" data-error="Firstname is required."> </div>
+                                    <hr style="border : 120px soild gray;">
+                                </div>
+                            </div>
+                            <div class="row">
+                </div>
+                <div class="container">
+
+                                <div class="col">
+                                    <div class="form-group ">  <input id="form_email" type="email" name="email" class="form-control form-border"  placeholder="Enter  Subject " required="required" data-error="Valid email is required."> </div>
+                                    <hr style="border : 120px soild gray;">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group ">  
+                                        <textarea id="form_message" name="message" class="form-control form-border"  placeholder="Enter Message" rows="4" required="required" data-error="Please, leave us a message."></textarea> 
+                                    <hr style="border : 120px soild gray;">
+
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestias quo minus quos id vero sint ratione odit vel, suscipit voluptatum assumenda eius veritatis laborum delectus ipsam quisquam quam perferendis?</p>
+                                </div>
+                                <div class="col-4" >
+                                        <input type="submit" style="border-class border-radius: 0px!important;" class="btn btn-success btn-send pt-2 btn-block " value="Send"> 
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+            <div class="col">
+
+            </div>
+        </div>
+    </div> -->
+    <div class="container" style="background-color: white; width: 35%; 
+    margin: 3% 0 3% 30%;">
+
+        <h1 class="text-center">REGISTER</h1>
+        <hr>
+        <form class="needs-validation" novalidate>
+            <div class="form-row ">
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div ">
+                        <div class="invalid-feedback">
+                            Email
+                        </div>
+                        <div class="valid-feedback">
+                            Email
+                        </div>
+
+                        <input type="email" class="border-class form-control" id="inputEmail4" placeholder="Enter Email"
+                            required>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 padding-class" style="
+                padding: 10px 5px 10px 5px;">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Username
+                        </div>
+                        <div class="valid-feedback">
+                            Username
+                        </div>
+                        <input type="text" class="border-class form-control" id="validationCustomUsername"
+                            placeholder="Enter Username" aria-describedby="inputGroupPrepend" required>
+                        <div class="input-group">
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Password
+                        </div>
+                        <div class="valid-feedback">
+                            Password
+                        </div>
+
+                        <input type="password" class="border-class form-control" id="inputPassword4"
+                            placeholder="Enter Password" required>
+                    </div>
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Password
+                        </div>
+                        <div class="valid-feedback">
+                            Password
+                        </div>
+
+                        <input type="password" class="border-class form-control" id="inputPassword4"
+                            placeholder="Enter Password" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 padding-class mb-3">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            First name
+                        </div>
+                        <div class="valid-feedback">
+                            First name
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="validationCustom01"
+                            placeholder="Enter First name" required required>
+                    </div>
+
+
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6 padding-class mb-3">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Last name
+                        </div>
+                        <div class="valid-feedback">
+                            Last name
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="validationCustom02"
+                            placeholder="Enter Last name" required required>
+                    </div>
+
+
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Company Name
+                        </div>
+                        <div class="valid-feedback">
+                            Company Name
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="inputCity"
+                            placeholder="Enter Company Name" required>
+                    </div>
+
+
+
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Address 1
+                        </div>
+                        <div class="valid-feedback">
+                            Address 1
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="inputAddress"
+                            placeholder="Enter Address Line 1" required>
+                    </div>
+
+
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Address 2
+                        </div>
+                        <div class="valid-feedback">
+                            Address 2
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="inputAddress2"
+                            placeholder="Enter Address Line 2" required>
+                    </div>
+
+
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            City
+                        </div>
+                        <div class="valid-feedback">
+                            City
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="inputCity" placeholder="City" required>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="form-row">
+                <div class="form-group padding-class  col-md-6">
+
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Company Name
+                        </div>
+                        <div class="valid-feedback">
+                            Company Name
+                        </div>
+                        <select id="inputCountry" name=" inputCountry"
+                            class="border-class form-control text-input btminput">
+                            <option value="">Select County</option>
+                            <option value="83"> Surrey</option>
+                            <option value="1">Aberdeen City</option>
+                            <option value="2">Aberdeenshire</option>
+                            <option value="3">Anglesey</option>
+                            <option value="4">Angus</option>
+                            <option value="5">Antrim</option>
+                            <option value="6">Argyll and Bute</option>
+                            <option value="7">Armagh</option>
+                            <option value="8">Bedfordshire</option>
+                            <option value="9">Breconshire</option>
+                            <option value="96">Bristol</option>
+                            <option value="10">Buckinghamshire</option>
+                            <option value="11">Caernarvonshire</option>
+                            <option value="12">Cambridgeshire</option>
+                            <option value="13">Cardiganshire</option>
+                            <option value="14">Carmarthenshire</option>
+                            <option value="116">Ceredigion</option>
+                            <option value="15">Cheshire</option>
+                            <option value="16">City of Edinburgh</option>
+                            <option value="17">Clackmannanshire</option>
+                            <option value="18">Cleveland</option>
+                            <option value="117">Conwy</option>
+                            <option value="19">Cornwall</option>
+                            <option value="103">County Antrim</option>
+                            <option value="104">County Armagh</option>
+                            <option value="105">County Down</option>
+                            <option value="97">County Durham</option>
+                            <option value="106">County Fermanagh</option>
+                            <option value="107">County Londonderry</option>
+                            <option value="108">County Tyrone</option>
+                            <option value="20">Cumbria</option>
+                            <option value="21">Denbighshire</option>
+                            <option value="22">Derbyshire</option>
+                            <option value="23">Derry and Londonderry</option>
+                            <option value="24">Devon</option>
+                            <option value="25">Dorset</option>
+                            <option value="26">Down</option>
+                            <option value="27">Dumfries and Galloway</option>
+                            <option value="109">Dundee</option>
+                            <option value="28">Dundee City</option>
+                            <option value="29">Durham</option>
+                            <option value="30">East Ayrshire</option>
+                            <option value="31">East Dunbartonshire</option>
+                            <option value="32">East Lothian</option>
+                            <option value="33">East Renfrewshire</option>
+                            <option value="98">East Riding of Yorkshire</option>
+                            <option value="34">East Sussex</option>
+                            <option value="110">Edinburgh?</option>
+                            <option value="35">Eilean Siar</option>
+                            <option value="36">Essex</option>
+                            <option value="37">Falkirk</option>
+                            <option value="38">Fermanagh</option>
+                            <option value="39">Fife</option>
+                            <option value="40">Flintshire</option>
+                            <option value="41">Glamorgan</option>
+                            <option value="42">Glasgow City</option>
+                            <option value="43">Gloucestershire</option>
+                            <option value="44">Greater London</option>
+                            <option value="45">Greater Manchester</option>
+                            <option value="118">Gwent</option>
+                            <option value="119">Gwynedd</option>
+                            <option value="46">Hampshire</option>
+                            <option value="99">Herefordshire</option>
+                            <option value="47">Hertfordshire</option>
+                            <option value="48">Highland</option>
+                            <option value="111">Highlands</option>
+                            <option value="49">Inverclyde</option>
+                            <option value="100">Isle of Wight</option>
+                            <option value="50">Kent</option>
+                            <option value="51">Lancashire</option>
+                            <option value="52">Leicestershire</option>
+                            <option value="53">Lincolnshire</option>
+                            <option value="112">Lothian</option>
+                            <option value="54">Merionethshire</option>
+                            <option value="55">Merseyside</option>
+                            <option value="120">Mid Glamorgan</option>
+                            <option value="56">Midlothian</option>
+                            <option value="57">Monmouthshire</option>
+                            <option value="58">Montgomeryshire</option>
+                            <option value="59">Moray</option>
+                            <option value="60">Norfolk</option>
+                            <option value="61">North Ayrshire</option>
+                            <option value="62">North Lanarkshire</option>
+                            <option value="63">North Yorkshire</option>
+                            <option value="64">Northamptonshire</option>
+                            <option value="65">Northumberland</option>
+                            <option value="66">Nottinghamshire</option>
+                            <option value="67">Orkney Islands</option>
+                            <option value="68">Oxfordshire</option>
+                            <option value="69">Pembrokeshire</option>
+                            <option value="70">Perth and Kinross</option>
+                            <option value="121">Powys</option>
+                            <option value="71">Radnorshire</option>
+                            <option value="72">Renfrewshire</option>
+                            <option value="101">Rutland</option>
+                            <option value="73">Scottish Borders</option>
+                            <option value="74">Shetland Islands</option>
+                            <option value="75">Shropshire</option>
+                            <option value="76">Somerset</option>
+                            <option value="77">South Ayrshire</option>
+                            <option value="122">South Glamorgan</option>
+                            <option value="78">South Lanarkshire</option>
+                            <option value="79">South Yorkshire</option>
+                            <option value="80">Staffordshire</option>
+                            <option value="81">Stirling</option>
+                            <option value="113">Stirlingshire</option>
+                            <option value="114">Strathclyde</option>
+                            <option value="82">Suffolk</option>
+                            <option value="102">Surrey</option>
+                            <option value="84">Tyne and Wear</option>
+                            <option value="85">Tyrone</option>
+                            <option value="86">Warwickshire</option>
+                            <option value="87">West Berkshire</option>
+                            <option value="88">West Dunbartonshire</option>
+                            <option value="123">West Glamorgan</option>
+                            class="field-div" <option value="89">West Lothian</option>
+                            <option value="90">West Midlands</option>
+                            <option value="91">West Sussex</option>
+                            <option value="92">West Yorkshire</option>
+                            <option value="115">Western Isles</option>
+                            <option value="93">Wiltshire</option>
+                            <option value="94">Worcestershire</option>
+                            <option value="124">Wrexham</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Zip
+                        </div>
+                        <div class="valid-feedback">
+                            Zip
+                        </div>
+
+                        <input type="text" class="border-class form-control" id="inputZip" placeholder="Zip" required>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-row">
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            State
+                        </div>
+                        <div class="valid-feedback">
+                            State
+                        </div>
+                        <select id="inputState" class="border-class form-control">
+                            <option selected>United Kindom</option>
+                            <option>Afghanistan</option>
+                            <option>India</option>
+                            <option>Ireland</option>
+                            <option>North Ireland</option>
+                            <option>Scotland</option>
+                            <option>United Nations</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Phone
+                        </div>
+                        <div class="valid-feedback">
+                            Phone
+                        </div>
+
+                        <input type="number" class="border-class form-control" id="inputnumber"
+                            placeholder="Enter Phone" required>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            Mobile
+                        </div>
+                        <div class="valid-feedback">
+                            Mobile
+                        </div>
+
+                        <input type="number" class="border-class form-control" id="inputnumber"
+                            placeholder="Enter Enter Mobile" required>
+                    </div>
+                </div>
+                <div class="form-group padding-class  col-md-6">
+                    <div class="field-div">
+                        <div class="invalid-feedback">
+                            State
+                        </div>
+                        <div class="valid-feedback">
+                            State
+                        </div>
+                        <select id="inputState" class="border-class form-control">
+                            <option selected>How did you find us ?</option>
+                            <option>Search Engine</option>
+                            <option>Newspaper</option>
+                            <option>Friend</option>
+                            <option>Customer</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group  ">
+                <div class="form-check">
+
+                    <input class="form-check-input " type="checkbox" id="gridCheck" required>
+                    <label class="form-check-label" for="grJoinidCheck">Join Newsletter </label>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn mb-5 mt-3" style="background: #FEAD3A;">SUBMIT</button>
+                <button type="submit" class="btn mb-5 mt-3" style="background: #FEAD3A;">CANCEL</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>

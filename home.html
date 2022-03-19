@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dropdown Menu with Search Box | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+---- Include the above in your HEAD tag -------- -->
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: Open-sans, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Raleway, Helvetica, sans-serif;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+
+  .padded {
+    padding: 100px 0;
+  }
+
+  .wrapper-grey {
+    background: #F4F4F4;
+  }
+
+  .avatar {
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  .avatar-bordered {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: white 1px solid;
+  }
+
+  .avatar-large {
+    width: 50px;
+  }
+
+  /* .banner {
+    color: white;
+    text-align: center;
+    height: 100vh;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  .banner p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+  } */
+
+  .card {
+    height: 250px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .card-user {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .card-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+
+  .card-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .card-description h2 {
+    font-size: 22px;
+  }
+
+  .card-description p {
+    font-size: 15px;
+  }
+
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    opacity: 0;
+  }
+
+  .card-link:hover {
+    opacity: 0.1;
+  }
+
+  .features img {
+    width: 100px;
+  }
+
+  .features h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .features p {
+    font-size: 15px;
+    font-weight: lighter;
+  }
+</style>
+
+<body style="overflow-x: hidden;">
+
+  <header class="headerDiv" id="header" style="overflow-x: hidden;">
+    <div class="wrapper ">
+      <nav>
+        <input type="checkbox" id="show-search">
+        <input type="checkbox" id="show-menu">
+        <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+        <div class="content-navbar">
+          <div class="logo"><a href="#"><img src="./images/Second Final Logo Devop360 White-01 1 (1).png" alt=""></a>
+          </div>
+          <ul class="links ">
+            <li><a href="#"><del>HOME</del></a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li>
+              <a href="#" class="desktop-link">Services</a>
+              <input type="checkbox" id="show-services">
+              <label for="show-services">Services</label>
+              <ul>
+                <li><a href="#">Drop Menu 1</a></li>
+                <li><a href="#">Drop Menu 2</a></li>
+                <li><a href="#">Drop Menu 3</a></li>
+                <li>
+                  <a href="#" class="desktop-link">Portfolio </a>
+                  <input type="checkbox" id="show-items">
+                  <label for="show-items">More Items</label>
+                  <ul>
+                    <li><a href="#">Sub Menu 1</a></li>
+                    <li><a href="#">Sub Menu 2</a></li>
+                    <li><a href="#">Sub Menu 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <ul class=" social-links" style="">
+            <li >Linkedin</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+            <li>Facebook</li>
+          </ul>
+        </div>
+        <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+        <form action="#" class="search-box">
+          <input type="text" placeholder="Type Something to Search..." required>
+        </form>
+      </nav>
+      <!-- <hr> -->
+    </div>
+  </header>
+<!-- 
+  <section id="header">
+    <div class="dummy-text dummy-text-rem" style="margin-top: 250px;">
+      <h2 class="">Creative </h2>
+      <h2 class=""> Talent </h2>
+      <h2 class=""> Here</h2>
+      <button type="button" class="btn btn-home">Read more</button>
+      <button type="button" class="btn btn-home">View Portfolio</button>
+    </div>
+  </section> -->
+
+  <section style="background: #053146!important;">
+    <div class="wrapper-grey padded secind-div-text" style="background: #053146!important;">
+      <!-- <div class="container-fluid" style=" color: white;">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i1.wp.com/handluggageonly.co.uk/wp-content/uploads/2015/05/IMG_2813-s.jpg?w=1600&ssl=1');">
+            <div class="card-category">City</div>
+            <div class="card-description">
+              <h2>home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user avatar avatar-large"
+              src="https://github.com/lewagon/bootstrap-challenges/blob/master/11-Airbnb-search-form/images/anne.jpg?raw=true">
+            <a class="card-link" href="#"></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2016/04/IMG_5589.jpg?w=1600&ssl=1');">
+            <div class="card-category">City</div>
+            <div class="card-description">
+              <h2>home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user avatar avatar-large"
+              src="https://github.com/lewagon/bootstrap-challenges/blob/master/11-Airbnb-search-form/images/anne.jpg?raw=true">
+            <a class="card-link" href="#"></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2016/03/Positano-Weather.jpg?w=1600&ssl=1');">
+            <div class="card-category">City</div>
+            <div class="card-description">
+              <h2>Home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user avatar avatar-large"
+              src="https://github.com/lewagon/bootstrap-challenges/blob/master/11-Airbnb-search-form/images/anne.jpg?raw=true">
+            <a class="card-link" href="#"></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i1.wp.com/handluggageonly.co.uk/wp-content/uploads/2015/05/IMG_2813-s.jpg?w=1600&ssl=1');">
+            <div class="card-category">City</div>
+            <div class="card-description">
+              <h2>home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user avatar avatar-large"
+              src="https://github.com/lewagon/bootstrap-challenges/blob/master/11-Airbnb-search-form/images/anne.jpg?raw=true">
+            <a class="card-link" href="#"></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2016/04/IMG_5589.jpg?w=1600&ssl=1');">
+            <div class="card-category">City</div>
+            <div class="card-description">
+              <h2>home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user avatar avatar-large"
+              src="https://github.com/lewagon/bootstrap-challenges/blob/master/11-Airbnb-search-form/images/anne.jpg?raw=true">
+            <a class="card-link" href="#"></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2016/03/Positano-Weather.jpg?w=1600&ssl=1');">
+            <div class="card-category">City</div>
+            <div class="card-description">
+              <h2>Home</h2>
+              <p>Lovely house</p>
+            </div>
+            <img class="card-user avatar avatar-large"
+              src="https://github.com/lewagon/bootstrap-challenges/blob/master/11-Airbnb-search-form/images/anne.jpg?raw=true">
+            <a class="card-link" href="#"></a>
+          </div>
+        </div>
+      </div> -->
+    
+      <div class="container-fluid text " style=" color: white;">
+        <div>
+          <p>Our Services</p>
+          <br>
+          <br>
+        </div>
+        <div class="row text-left" >
+          <div class="col">
+            <h2 class="" >We Shape The</h2>
+            <h2> Perfect Solution</h2>
+          </div>
+          <div class="col" style="
+          padding-right: 0px;">
+            <p>We are committed to providing our customers with not</p>
+            <p>service while offering our emod tempor incididunt ut</p>
+            <p>labore employees the best training.</p>
+          </div>
+        </div>
+          <div class="row">
+              <div class="col-sm-6 col-lg-4">
+                  <div class="card card-margin hover-property" style="height: 170px;">
+                    <div class="card-body pt-5">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                  <div class="img-side-text col" style="color: black; padding: 0 0 0 0;">
+                                      <p class="">Mobile </p>
+                                      <p class="">Applications</p>
+                                  </div>
+                                  <div class="widget-49-date-primary col">
+                                      <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="widget-49-meeting-action">
+                                  <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                  <div class="card card-margin hover-property" style="height: 170px;">
+                    <div class="card-body pt-5">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                  
+                                  <div class="img-side-text col" style="color: black; padding: 0 0 0 0;">
+                                      <p class="">Digitalppan>
+                                      <p class="">Marketing</p>
+                                  </div>
+                                  <div class="widget-49-date-warning col">
+                                      <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="widget-49-meeting-action">
+                                  <a href="#" class="btn btn-sm btn-flash-border-warning">View All</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                  <div class="card card-margin hover-property" style="height: 170px;">
+                    <div class="card-body pt-5">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                  
+                                  <div class="img-side-text col" style="color: black; padding: 0 0 0 0;">
+                                      <p class="">Graphicppan>
+                                      <p class="">Designing</p>
+                                  </div>
+                                  <div class="widget-49-date-success col">
+                                      <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="widget-49-meeting-action">
+                                  <a href="#" class="btn btn-sm btn-flash-border-success">View All</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                  <div class="card card-margin hover-property" style="height: 170px;">
+                    <div class="card-body pt-5">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                  
+                                  <div class="img-side-text col" style="color: black; padding: 0 0 0 0;">
+                                      <p class="">Web </p>
+                                      <p class="">Development</p>
+                                  </div>
+                                  <div class="widget-49-date-primary col">
+                                      <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="widget-49-meeting-action">
+                                  <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                  <div class="card card-margin hover-property" style="height: 170px;">
+                    <div class="card-body pt-5">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                  
+                                  <div class="img-side-text col" style="color: black; padding: 0 0 0 0;">
+                                      <p class="">Socialpia </span>
+                                      <p class="">Maketing</p>
+                                  </div>
+                                  <div class="widget-49-date-warning col">
+                                      <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="widget-49-meeting-action">
+                                  <a href="#" class="btn btn-sm btn-flash-border-warning">View All</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                  <div class="card card-margin hover-property" style="height: 170px; background-color: black;">
+                    <div class="card-body pt-5">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                <!-- widget-49-pro-title
+                                widget-49-meeting-time -->
+                                  <div class="widget-49-meeting-info col">
+                                      <span class="">View Our </span>
+                                      <span class="">All Services</span>
+                                  </div>
+                                  <!-- <div class="widget-49-date-success col">
+                                      <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+                                  </div> -->
+                              </div>
+                              <div class="widget-49-meeting-action">
+                                  <a href="#" class="btn btn-sm btn-flash-border-success">View All</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-6  col-lg-7 col-xl-6 text-side-img">
+         
+          <div class="row div-over-pic" style="">
+            <div class="col">
+              <img src="./images/undraw_experience_design_eq3j 1.png" alt="">
+            </div>
+            <div class="col">
+              <p style="padding-top: 20px;" >40 Years of Working Experience</p>
+            </div>
+          </div> 
+          <img style=" width: 100%; z-index: -1;  margin-top: -110px;" src="./images/welcome-one-img-1.jpg" alt="">
+        </div>
+        <div class="col-sm-12 col-md-6  col-lg-5 col-xl-6  img-side-text" style=" z-index: -1;" >
+          <small>OUR INTRODUCTIONS</small>
+          <h2>A LEADING WEB & SOFTWARE COMPANY</h2>
+          <p>Devop360 established in the year 2015 has all the experience, expertise and achievements that give the
+            company a vast and diversified portfolio of success. Since its inception, the company has been in to varied
+            phases of transformations for betterment and excellence in whatever services we offer. Protruding its list
+            of clients both local and international, Advent Interactive is proud to have worked for varied jack of
+            projects related to different industries such as hospitality, medicine, education, entertainment, non-profit
+            organizations and more. We have people crafted with experience, knowledge and right skills to do your job in
+            the best possible manner <a href=""> Read more</a> </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section id="videoDiv">
+    <div >
+      
+      <video id="video1" controls poster="./images/design-studio-bg 1 (1).png"  preload="" autoplay="" muted="" playsinline="" loop="">
+        <source src="video/t13.mp4" type="video/mp4">
+      </video>
+    
+      <div id="videoMessage" class="styling">
+        <h1>The Early Bird...</h1>
+        <h2>...gets the food.</h2>
+        <h3>Don't be late!</h3>
+        <p class="videoClick">
+          <a href="#">Click here and be impressed</a>
+        </p>
+      </div>
+    </div>
+  </section> -->
+  <section>
+    <!-- The video -->
+    <video autoplay controls muted loop poster="./images/design-studio-bg 1 (1).png" id="myVideo">
+      <source class="video" type="video/mp4">
+      <div class="content-video">
+        <div >
+          <h1>Heading</h1>
+          <p>Lorem ipsum...</p>
+          <h1>DESIGN STUDIO THAT GETS EXCITED ABOUT</h1>
+        </div>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button id="myBtn" onclick="myFunction()">Pause</button>
+      </div>
+    </video>
+
+    <!-- Optional: some overlay text to describe the video -->
+  </section>
+
+  <section class="z-idex-section">
+    <div class="container-fluid" style="background-color: white; background-image: url(./images/counter-one-pattern\ 1.png);">
+      <div class="row" style="
+      text-align: center; padding: 40px 90px 40px 90px;">
+        <div class="col-sm-6 col-md-3">
+          <div style=" margin: 30px; text-align: center; ">
+            <img style="padding: 20px; background-color: white;"
+              src="./images/undraw_Project_completed_re_pqqq (1) 1.png" alt="">
+          </div>
+          <h1>521</h1>
+          <p>Complete</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div style=" margin: 30px; text-align: center; ">
+            <img style="padding: 20px; background-color: white;"
+              src="./images/undraw_Project_completed_re_pqqq (1) 1.png" alt="">
+          </div>
+          <h1>521</h1>
+          <p>Complete</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div style=" margin: 30px; text-align: center; ">
+            <img style="padding: 20px; background-color: white;"
+              src="./images/undraw_Project_completed_re_pqqq (1) 1.png" alt="">
+          </div>
+          <h1>521</h1>
+          <p>Complete</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div style=" margin: 30px; text-align: center; ">
+            <img style="padding: 20px; background-color: white;"
+              src="./images/undraw_Project_completed_re_pqqq (1) 1.png" alt="">
+          </div>
+          <h1>521</h1>
+          <p>Complete</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="we-care-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-xl-5">
+          <img src="./images/we-care-img 1.png" alt="">
+        </div>
+        <div class="col-lg-12 col-xl-7">
+          <h3>WE CARE ABOUT BUSINESS GROWTHS</h3>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </section>
+  <section>
+    <div class="container-fluid recent-project">
+      <div>
+        <p style="color: #053146; margin-top: 75px;">Recent Project</p>
+        <h2>Our POrtfolio</h2>
+        <ul style="display: flex; list-style: none; justify-content: space-around;">
+          <li></li>
+          <li>Branding</li>
+          <li>Designing</li>
+          <li>Web Development</li>
+          <li>Social media</li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class=" col-md-6 col-xl-4 ">
+          <img src="./images/project-one-img-1.jpg" alt="">
+        </div>
+        <div class=" col-md-6 col-xl-4 ">
+          <img src="./images/project-one-img-2.jpg" alt="">
+        </div>
+        <div class=" col-md-6 col-xl-4 ">
+          <img src="./images/project-one-img-3.jpg" alt="">
+        </div>
+        <div class=" col-md-6 col-xl-4 ">
+          <img src="./images/project-one-img-4.jpg" alt="">
+        </div>
+        <div class=" col-md-6 col-xl-4 ">
+          <img src="./images/project-one-img-5.jpg" alt="">
+        </div>
+        <div class=" col-md-6 col-xl-4 ">
+          <img src="./images/project-one-img-6.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row" style="margin: 150px;  ">
+      <div class="col-sm-12 col-lg-6  text-side-img">
+        <img style="width: 100%;" src="./images/why-choose-one-img.jpg" alt="">
+      </div>
+      <div class="col-sm-12 col-lg-6  img-text img-side-text">
+        <div class="col-lg-12">
+          <small>wHY cHOOSE uS</small>
+          <h2>WE DO MORE THEN</h2>
+          <h2> EVER PLATFORM</h2>
+          <p>There are many variations of passages of lorem ipsum a</p>
+          <p>vailable, but the majority
+            have suffered in some form,</p>
+          <p>by injected free text not humour.</p>
+          <hr>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class=" col">
+              <img style="width: max-content;" src="./images/why-choose-one-content-img.jpg" alt="">
+            </div>
+            <div class="col">
+              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              <label for="vehicle1"> I have a bike</label><br>
+              <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+              <label for="vehicle2"> I have a car</label><br>
+              <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+              <label for="vehicle3"> I have a boat</label>
+            </div>
+
+          </div>
+        </div>
+
+        <p>dIGITAL MARKETING</p>
+      </div>
+    </div>
+    <div class="container-fluid">
+  </section>
+
+  <section>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-xl-4">
+          <div class=" profile-card-2 ">
+            <div class="card" style="color: black; height: 350px;">
+              <p class="card-text">I was very impresed by the mibooz service and their work of quality lorem ipsum is
+                simply free text used by copy typing refreshing. Neque porro est qui ipsum.</p>
+            </div>
+            <div class="card-body pt-4">
+              <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile" />
+              <h5 class="card-title">Shurvir Mori</h5>
+              <h5 style="color: #053146;">Customer</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class=" profile-card-2 ">
+            <div class="card" style="color: black; height: 350px;">
+              <p class="card-text">I was very impresed by the mibooz service and their work of quality lorem ipsum is
+                simply free text used by copy typing refreshing. Neque porro est qui ipsum.</p>
+            </div>
+            <div class="card-body pt-5">
+              <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile" />
+              <h5 class="card-title">Shurvir Mori</h5>
+              <h5 style="color: #053146;">Customer</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class=" profile-card-2 ">
+            <div class="card" style="color: black; height: 350px;">
+              <p class="card-text">I was very impresed by the mibooz service and their work of quality lorem ipsum is
+                simply free text used by copy typing refreshing. Neque porro est qui ipsum.</p>
+            </div>
+            <div class="card-body pt-5">
+              <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="profile-image" class="profile" />
+              <h5 class="card-title">Shurvir Mori</h5>
+              <h5 style="color: #053146;">Customer</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container-fluid" style="background: #053146;  ">
+      <div class="row">
+        <div class="col-8" style=" color:white;">
+          <h1><span>
+              <img src="./images/user-experience 1.png" alt="">
+            </span> WE’RE DELIVERING THE BEST <br> CUSTOMER EXPERIENCE</h1>
+        </div>
+        <div class="col-4 btn-div">
+          <button type="button" class="btn btn-home">LET’S GET STARTED</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- script -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 2nd section -->
+  <!-- cards -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- 4th section -->
+  <!-- video -->
+  <script>
+    // Get the video
+    var video = document.getElementById("myVideo");
+
+    // Get the button
+    var btn = document.getElementById("myBtn");
+
+    // Pause and play the video, and change the button text
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+  </script>
+</body>
+<footer  style="overflow-x: hidden;">
+  <div class="footer-wrap">
+    <div class="container-fluid first_class">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <h3>YOUR PERFECT BUSINESS PARTNER SOLUTION</h3>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a
+              href="#"><i class="icon ion-social-instagram"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="second_class">
+      <div class="container-fluid second_class_bdr">
+        <div class="row">
+          <div class="col-xl-2 col-md-5">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><a href="#">A40 Elm road,
+                  Feltham Middx TW14 8EW
+                  United Kingdom.</a>
+              </li>
+              <li><a href="#">info@Devop360.com</a>
+              </li>
+              <li><a href="#">+1 5589 55488 55</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-2 col-md-5">
+            <h3>Quick LInks</h3>
+            <ul class="footer-links">
+              <li><a href="#">Home</a>
+              </li>
+              <li><a href="#">About us</a>
+              </li>
+              <li><a href="#">Triedge Partners</a>
+              </li>
+              <li><a href="#">Contact Us</a>
+              </li>
+              <li><a href="#" target="_blank">Terms &amp; Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-2 col-md-5">
+            <h3>OUR SERVICES</h3>
+            <ul class="footer-category">
+              <li><a href="#">Fresher Jobs</a>
+              </li>
+              <li><a href="#">InternEdge &amp; Projects </a>
+              </li>
+              <li><a href="#">Resume Edge</a>
+              </li>
+              <li><a href="#">Readers Galleria</a>
+              </li>
+              <li><a href="#">Trideus</a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-md-4 col-sm-6 footer-black-div">
+            <div style=" background-color: black; padding: inherit; margin-left:  -130px;">
+              <h2>Newsletter</h2>
+              <br>
+              <small class="disabled">Email Address</small>
+              <hr>
+              <small class="disabled">I agree to all your terms and policies</small>
+              <br>
+              <br>
+              <small class="disabled">Sign up for free newsletters & get more of DEVOP360 delivered to you.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container-fluid-fluid">
+        <div class="copyright"> © Copyrights, 2021 devop360.com</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--footer end-->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  Font Awesome 5 links
+  <script src="https://kit.fontawesome.com/fddf5c0916.js" crossorigin="anonymous"></script> -->
+
+</html>
